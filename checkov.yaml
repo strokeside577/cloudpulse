@@ -1,16 +1,5 @@
 soft-fail: false
 framework:
   - terraform
-check:
-  - CKV_GCP_1  # Ensure GKE clusters have logging enabled
-  - CKV_GCP_2  # Ensure GKE clusters have monitoring enabled  
-  - CKV_GCP_6  # Ensure GKE clusters have legacy authentication disabled
-  - CKV_GCP_7  # Ensure GKE clusters have basic authentication disabled
-  - CKV_GCP_8  # Ensure GKE clusters have client certificate disabled
-  - CKV_GCP_9  # Ensure GKE clusters have private cluster enabled
-  - CKV_GCP_10 # Ensure GKE clusters have network policy enabled
-  - CKV_GCP_11 # Ensure GKE clusters have master authorized networks enabled
-  - CKV_GCP_12 # Ensure GKE clusters have node auto-repair enabled
-  - CKV_GCP_13 # Ensure GKE clusters have node auto-upgrade enabled
 skip-check:
   - CKV_TF_1  # Skip Terraform version check for now
