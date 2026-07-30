@@ -3,6 +3,11 @@ config {
   force = false
 }
 
+plugin "gcp" {
+  source = "github.com/terraform-linters/tflint-ruleset-gcp"
+  enabled = true
+}
+
 rule "terraform_required_version" {
   enabled = true
 }
