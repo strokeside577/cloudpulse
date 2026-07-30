@@ -2,21 +2,22 @@ soft-fail: false
 framework:
   - terraform
 check:
-  - CKV_GCP_1  # Ensure storage logging is enabled
-  - CKV_GCP_2  # Ensure storage bucket is not public
-  - CKV_GCP_3  # Ensure IAM binding does not include serviceAccount:*
-  - CKV_GCP_6  # Ensure compute instances have shield enabled
-  - CKV_GCP_7  # Ensure GKE has shield enabled
-  - CKV_GCP_8  # Ensure GKE has private cluster enabled
-  - CKV_GCP_9  # Ensure GKE has node auto-repair enabled
-  - CKV_GCP_10 # Ensure GKE has node auto-upgrade enabled
-  - CKV_GCP_11 # Ensure GKE has master authorized networks enabled
-  - CKV_GCP_12 # Ensure GKE has network policy enabled
-  - CKV_GCP_14 # Ensure GKE has legacy authentication disabled
-  - CKV_GCP_15 # Ensure GKE has basic authentication disabled
-  - CKV_GCP_16 # Ensure GKE has client certificate disabled
-  - CKV_GCP_20 # Ensure GKE has cluster logging enabled
-  - CKV_GCP_21 # Ensure GKE has cluster monitoring enabled
-  - CKV_GCP_22 # Ensure GKE has cluster autoscaling enabled
+  - CKV_GCP_1  # Ensure Stackdriver Logging is set to Enabled on Kubernetes Engine Clusters
+  - CKV_GCP_2  # Ensure Google compute firewall ingress does not allow unrestricted ssh access
+  - CKV_GCP_3  # Ensure Google compute firewall ingress does not allow unrestricted rdp access
+  - CKV_GCP_6  # Ensure Shielded GKE Nodes are enabled
+  - CKV_GCP_7  # Ensure Legacy Authorization is set to Disabled on Kubernetes Engine Clusters
+  - CKV_GCP_8  # Ensure Stackdriver Monitoring is set to Enabled on Kubernetes Engine Clusters
+  - CKV_GCP_9  # Ensure GKE node auto-repair is enabled
+  - CKV_GCP_10 # Ensure GKE node auto-upgrade is enabled
+  - CKV_GCP_11 # Ensure GKE master authorized networks is enabled
+  - CKV_GCP_12 # Ensure GKE network policy is enabled
+  - CKV_GCP_14 # Ensure GKE client certificate is disabled
+  - CKV_GCP_15 # Ensure GKE basic authentication is disabled
+  - CKV_GCP_16 # Ensure GKE legacy authentication is disabled
+  - CKV_GCP_20 # Ensure GKE cluster logging is enabled
+  - CKV_GCP_21 # Ensure GKE cluster monitoring is enabled
+  - CKV_GCP_22 # Ensure GKE cluster autoscaling is enabled
+  - CKV_GCP_25 # Ensure GKE private cluster is enabled
 skip-check:
   - CKV_TF_1  # Skip Terraform version check for now
