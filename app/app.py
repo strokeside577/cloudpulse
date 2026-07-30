@@ -1,4 +1,4 @@
-from flask import Flask, jsonify
+from flask import Flask, jsonify, g
 from prometheus_client import Counter, Histogram, generate_latest, CONTENT_TYPE_LATEST
 import time
 
@@ -8,8 +8,19 @@ app = Flask(__name__)
 request_count = Counter('http_requests_total', 'Total HTTP requests', ['method', 'endpoint'])
 request_latency = Histogram('http_request_duration_seconds', 'HTTP request latency')
 
+@app.before_request
+def start_timer():
+    g.start_time = time.time()
+
+@app.after_request
+def stop_timer(response):
+    if hasattr(g, 'start_time') and g.start_time is not None:
+        request_latency.observe(time.time() - g.start_time)
+    return response
+
 @app.route('/health')
 def health():
+    request_count.labels(method='GET', endpoint='/health').inc()
     return jsonify({'status': 'healthy'})
 
 @app.route('/metrics')
