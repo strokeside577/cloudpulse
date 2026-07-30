@@ -1,0 +1,39 @@
+soft-fail: false
+framework:
+  - terraform
+check:
+  - CKV_GCP_1  # Ensure storage logging is enabled
+  - CKV_GCP_2  # Ensure storage bucket is not public
+  - CKV_GCP_3  # Ensure IAM binding does not include serviceAccount:*
+  - CKV_GCP_6  # Ensure compute instances have shield enabled
+  - CKV_GCP_7  # Ensure GKE has shield enabled
+  - CKV_GCP_8  # Ensure GKE has private cluster enabled
+  - CKV_GCP_9  # Ensure GKE has node auto-repair enabled
+  - CKV_GCP_10 # Ensure GKE has node auto-upgrade enabled
+  - CKV_GCP_11 # Ensure GKE has master authorized networks enabled
+  - CKV_GCP_12 # Ensure GKE has network policy enabled
+  - CKV_GCP_13 # Ensure GKE has pod security policy enabled
+  - CKV_GCP_14 # Ensure GKE has legacy authentication disabled
+  - CKV_GCP_15 # Ensure GKE has basic authentication disabled
+  - CKV_GCP_16 # Ensure GKE has client certificate disabled
+  - CKV_GCP_17 # Ensure GKE has use of service account disabled
+  - CKV_GCP_18 # Ensure GKE has cluster issue notification enabled
+  - CKV_GCP_19 # Ensure GKE has maintenance window enabled
+  - CKV_GCP_20 # Ensure GKE has cluster logging enabled
+  - CKV_GCP_21 # Ensure GKE has cluster monitoring enabled
+  - CKV_GCP_22 # Ensure GKE has cluster autoscaling enabled
+  - CKV_GCP_23 # Ensure GKE has cluster auto-provisioning enabled
+  - CKV_GCP_24 # Ensure GKE has cluster labels
+  - CKV_GCP_25 # Ensure GKE has cluster network tags
+  - CKV_GCP_26 # Ensure GKE has cluster resource labels
+  - CKV_GCP_27 # Ensure GKE has cluster resource tags
+  - CKV_GCP_28 # Ensure GKE has cluster resource usage
+  - CKV_GCP_29 # Ensure GKE has cluster resource limits
+  - CKV_GCP_30 # Ensure GKE has cluster resource quotas
+  - CKV_GCP_31 # Ensure GKE has cluster resource requests
+  - CKV_GCP_32 # Ensure GKE has cluster resource usage
+  - CKV_GCP_33 # Ensure GKE has cluster resource limits
+  - CKV_GCP_34 # Ensure GKE has cluster resource quotas
+  - CKV_GCP_35 # Ensure GKE has cluster resource requests
+skip-check:
+  - CKV_TF_1  # Skip Terraform version check for now
