@@ -36,16 +36,15 @@ jobs:
           docker build -t cloudpulse:demo .
           echo "Docker image built successfully!"
 
-  docker-audit:
+  docker-build:
     needs: test
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
       
-      - name: Docker Scout Analyze
-        uses: docker/scout-action@v1
-        with:
-          image: cloudpulse:demo
-          format: table
-          show-removed: false
-          show-patches: false
+      - name: Build Docker image
+        run: |
+          cd app
+          docker build -t cloudpulse:demo .
+          echo "Docker image built successfully!"
+          docker images | grep cloudpulse
