@@ -1,0 +1,10 @@
+project_id    = "your-project-id"
+environment   = "dev"
+region        = "us-central1"
+cluster_name  = "cloudpulse-cluster"
+vpc_name      = "cloudpulse-vpc"
+subnet_cidr   = "10.0.0.0/24"
+node_count    = 1
+machine_type  = "e2-medium"
+min_nodes     = 1
+max_nodes     = 2
